@@ -1,0 +1,51 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-column-gap: 20px;
+}
+
+.cell {
+	background-color: grey;
+}
+
+.grid-12col {
+	grid-column: span 12;
+}
+
+.grid-8col {
+	grid-column: span 8;
+}
+
+.grid-6col {
+	grid-column: span 6;
+}
+
+.grid-3col {
+	grid-column: span 3;
+}
+
+@media only screen and (max-width: 600px) {
+	.grid-6col,
+	.grid-8col,
+	.grid-3col {
+		grid-column: span 12;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+	.tab-6col {
+		grid-column: span 6;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+
+@media only screen and (min-width: 1200px) {
+}
