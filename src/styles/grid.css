@@ -4,6 +4,18 @@
 	grid-column-gap: 20px;
 }
 
+.align-ctr {
+	align-items: center;
+}
+
+.jus-ctr {
+	justify-items: center;
+}
+
+.jus-left {
+	justify-items: left;
+}
+
 .cell {
 	background-color: grey;
 }
@@ -36,6 +48,10 @@
 }
 
 @media only screen and (min-width: 600px) and (max-width: 991px) {
+	.tab-12col {
+		grid-column: span 12;
+	}
+
 	.tab-6col {
 		grid-column: span 6;
 	}

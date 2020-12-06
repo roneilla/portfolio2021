@@ -32,15 +32,6 @@ class NavBar extends Component {
 			bgColor = '#f6f6f6';
 		}
 
-		// let navAnime = {
-		// 	duration: 400,
-		// 	height: [0, '50vh'],
-		// 	scaleY: [0, 1],
-		// 	easing: 'easeInQuad',
-		// 	translateY: [50, 0],
-		// 	opacity: [0, 1],
-		// };
-
 		let navItemAnime = {
 			duration: 500,
 			delay: anime.stagger(100),
