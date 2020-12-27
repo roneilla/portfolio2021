@@ -37,12 +37,16 @@ class Home extends Component {
 					backgroundColor: this.state.bgColor,
 				}}>
 				<div className="header container align-ctr jus-left grid">
-					<div className="grid-8col tab-12col">
-						<h1>Hello, I'm Roneilla!</h1>
+					<div className="grid-12col tab-12col">
+						{/* <h1>Hello, I'm Roneilla!</h1>
 						<h4>
 							I’m an Interaction Designer &amp; Creative Technologist based in
 							Toronto currently open to freelance projects.
 						</h4>
+						<h1>
+							I'm an Interaction Designer and Creative Technologist passionate
+							about enhancing experiences
+						</h1> */}
 					</div>
 				</div>
 				<div className="project-cards-wrapper">

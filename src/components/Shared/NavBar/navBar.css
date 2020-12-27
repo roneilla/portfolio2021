@@ -1,6 +1,8 @@
 nav {
-	transition: background-color 0.25s;
+	transition: height 1s;
 	transition-timing-function: ease-in;
+	z-index: 1001;
+	height: 4rem;
 }
 
 .nav {
@@ -23,7 +25,6 @@ nav {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	background-color: #dac9f8;
 	z-index: 1001;
 	padding-bottom: 2rem;
 	padding-top: 4rem;

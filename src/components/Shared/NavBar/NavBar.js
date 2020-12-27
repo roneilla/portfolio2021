@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Anime, { anime } from 'react-anime';
-
+import styled, { keyframes } from 'styled-components';
+import { fadeInDown } from 'react-animations';
 import './navBar.css';
 
 import Logo from '../../../assets/icons/logo.svg';
@@ -24,26 +24,30 @@ class NavBar extends Component {
 	}
 
 	render() {
-		var bgColor;
+		var bgColor, navHeight;
+
+		const fadeAnimation = keyframes`${fadeInDown}`;
+
+		const FadeDiv = styled.div`
+			animation: 3s ${fadeAnimation};
+		`;
+
+		const FadeNavItem = styled.div`
+			animation: 1s ${fadeAnimation};
+			transition-delay: 2s;
+		`;
 
 		if (this.state.isToggleOn) {
 			bgColor = '#DAC9F8';
+			navHeight = '400px';
 		} else {
 			bgColor = '#f6f6f6';
+			navHeight = '4rem';
 		}
-
-		let navItemAnime = {
-			duration: 500,
-			delay: anime.stagger(100),
-			height: [0, '5vh'],
-			easing: 'easeInQuad',
-			translateY: [50, 0],
-			opacity: [0, 1],
-		};
 
 		return (
 			<div>
-				<nav style={{ backgroundColor: bgColor }}>
+				<nav style={{ backgroundColor: bgColor, height: navHeight }}>
 					<div className="nav container">
 						<Link to="/">
 							<img src={Logo} />
@@ -60,14 +64,22 @@ class NavBar extends Component {
 						</button>
 					</div>
 					{this.state.isToggleOn ? (
-						<div id="mobile-nav" className="container">
-							<Anime {...navItemAnime}>
-								<Link to="/">Work</Link>
-								<Link to="/lab">Lab</Link>
-								<Link to="/about">About</Link>
-								<a href="mailto:roneillabumanlag@gmail.com">Say Hello</a>
-							</Anime>
-						</div>
+						<FadeDiv>
+							<div id="mobile-nav" className="container">
+								<FadeNavItem>
+									<Link to="/">Work</Link>
+								</FadeNavItem>
+								<FadeNavItem>
+									<Link to="/lab">Lab</Link>
+								</FadeNavItem>
+								<FadeNavItem>
+									<Link to="/about">About</Link>
+								</FadeNavItem>
+								<FadeNavItem>
+									<a href="mailto:roneillabumanlag@gmail.com">Say Hello</a>
+								</FadeNavItem>
+							</div>
+						</FadeDiv>
 					) : null}
 				</nav>
 			</div>
